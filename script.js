@@ -101,30 +101,18 @@ function divide(a) {
         setDisplayValue(sum);
     }
 }
-
-// Funkcja obliczająca wynik na podstawie operatora
 function equal() {
     if (cache.length >= 2 && cacheValue !== "") {
-        cache.push(parseFloat(cacheValue.replace(',', '.'))); // Zamiana przecinka na kropkę
+        cache.push(parseFloat(cacheValue.replace(',', '.')));
         let cacheNum1 = cache[0];
         let operator = cache[1];
         let cacheNum2 = cache[2];
         let result;
-
-        // Wyliczanie wyniku na podstawie operatora
         switch (operator) {
-            case '+':
-                result = cacheNum1 + cacheNum2;
-                break;
-            case '-':
-                result = cacheNum1 - cacheNum2;
-                break;
-            case '*':
-                result = cacheNum1 * cacheNum2;
-                break;
-            case '/':
-                result = cacheNum1 / cacheNum2;
-                break;
+            case '+':result = cacheNum1 + cacheNum2;break;
+            case '-':result = cacheNum1 - cacheNum2;break;
+            case '*':result = cacheNum1 * cacheNum2;break;
+            case '/':result = cacheNum1 / cacheNum2;break;
         }
         display.innerText = result.toString().replace('.', ',');
         cache = [result];
