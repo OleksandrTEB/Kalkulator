@@ -105,7 +105,7 @@ function divide(a) {
 // Funkcja obliczająca wynik na podstawie operatora
 function equal() {
     if (cache.length >= 2 && cacheValue !== "") {
-        cache.push(parseFloat(cacheValue.replace(',', '.')));
+        cache.push(parseFloat(cacheValue.replace(',', '.'))); // Zamiana przecinka na kropkę
         let cacheNum1 = cache[0];
         let operator = cache[1];
         let cacheNum2 = cache[2];
@@ -126,5 +126,9 @@ function equal() {
                 result = cacheNum1 / cacheNum2;
                 break;
         }
-    }
+        display.innerText = result.toString().replace('.', ',');
+        cache = [result];
+        cacheValue = result.toString().replace('.', ',');
+ }
 }
+
