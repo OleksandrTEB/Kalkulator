@@ -17,7 +17,7 @@ buttons.forEach((button) => {
         button.addEventListener('click', (e) => {
             // Dodawanie operatorów do pamięci
             if (cacheValue !== "") {
-                cache.push(parseFloat(cacheValue.replace(',', '.'))); // Zamiana przecinka na kropkę
+                cache.push(parseFloat(cacheValue.replace(',', '.')));
                 cache.push(operator); // Dodanie operatora
                 cacheValue = "";
                 display.innerText = ""; // Czyszczenie ekranu
@@ -25,7 +25,7 @@ buttons.forEach((button) => {
         });
     } else if(button.classList.contains('decimal')) { // Obsługuje przycisk kropki
         button.addEventListener('click', (e) => {
-            if (!cacheValue.includes(',')) { // Zapobiega podwójnym kropkom
+            if (!cacheValue.includes(',')) {
                 setDisplayValue(e.target.value);
             }
         });
@@ -35,7 +35,7 @@ buttons.forEach((button) => {
             clearDisplay(); // Czyszczenie ekranu i pamięci
             cache = [];
         });
-    } else if(button.classList.contains('equal-sign')) { // Obsługuje przycisk "="
+    } else if(button.classList.contains('equal-sign')) {
         buttonFunction.push(button);
         button.addEventListener('click', (e) => {
             equal(); // Obliczanie wyniku
@@ -105,7 +105,7 @@ function divide(a) {
 // Funkcja obliczająca wynik na podstawie operatora
 function equal() {
     if (cache.length >= 2 && cacheValue !== "") {
-        cache.push(parseFloat(cacheValue.replace(',', '.'))); // Zamiana przecinka na kropkę
+        cache.push(parseFloat(cacheValue.replace(',', '.')));
         let cacheNum1 = cache[0];
         let operator = cache[1];
         let cacheNum2 = cache[2];
