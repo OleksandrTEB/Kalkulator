@@ -102,21 +102,5 @@ function divide(a) {
     }
 }
 function equal() {
-    if (cache.length >= 2 && cacheValue !== "") {
-        cache.push(parseFloat(cacheValue.replace(',', '.')));
-        let cacheNum1 = cache[0];
-        let operator = cache[1];
-        let cacheNum2 = cache[2];
-        let result;
-        switch (operator) {
-            case '+':result = cacheNum1 + cacheNum2;break;
-            case '-':result = cacheNum1 - cacheNum2;break;
-            case '*':result = cacheNum1 * cacheNum2;break;
-            case '/':result = cacheNum1 / cacheNum2;break;
-        }
-        display.innerText = result.toString().replace('.', ',');
-        cache = [result];
-        cacheValue = result.toString().replace('.', ',');
- }
 }
 
