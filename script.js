@@ -126,10 +126,5 @@ function equal() {
                 result = cacheNum1 / cacheNum2;
                 break;
         }
-
-        // Wyświetlanie wyniku i zapis do pamięci
-        display.innerText = result.toString().replace('.', ',');
-        cache = [result];
-        cacheValue = result.toString().replace('.', ',');
     }
 }
