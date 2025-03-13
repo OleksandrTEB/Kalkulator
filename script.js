@@ -127,24 +127,18 @@ function equal() {
         let pierwasza_liczba = cache[0];
         let operator = cache[1];
         let druga_liczba = cache[2];
-
         // Przechwywuje wynik    
         let sum; 
         clearDisplay();
-        switch (operator) {
-            case '+':
-                sum = pierwasza_liczba + druga_liczba;
-                break;
-            case '-':
-                sum = pierwasza_liczba - druga_liczba;
-                break;
-            case '*':
+        if(operator == '+'){
+            sum = pierwasza_liczba + druga_liczba;   
+        } else if(operator == '-'){
+            sum = pierwasza_liczba - druga_liczba;
+            } else if(operator == '*'){
                 sum = pierwasza_liczba * druga_liczba;
-                break;
-            case '/':
-                sum = pierwasza_liczba / druga_liczba;
-                break;
-        }
+                } else if(operator == '/'){
+                    sum = pierwasza_liczba / druga_liczba;
+                    }
         // Wyświetla wynik
         setDisplayValue(sum);
     }
